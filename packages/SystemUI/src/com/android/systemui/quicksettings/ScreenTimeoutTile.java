@@ -32,15 +32,14 @@ public class ScreenTimeoutTile extends QuickSettingsTile {
     public static QuickSettingsTile mInstance;
 
     public static QuickSettingsTile getInstance(Context context, LayoutInflater inflater,
-            QuickSettingsContainerView container, final QuickSettingsController qsc, Handler handler, String id) {
+            QuickSettingsContainerView container, final QuickSettingsController qsc, String id) {
         mInstance = null;
-        mInstance = new ScreenTimeoutTile(context, inflater, container, qsc);
+        mInstance = new ScreenTimeoutTile(context, qsc);
         return mInstance;
     }
 
-    public ScreenTimeoutTile(Context context,
-            LayoutInflater inflater, QuickSettingsContainerView container, QuickSettingsController qsc) {
-        super(context, inflater, container, qsc);
+    public ScreenTimeoutTile(Context context, QuickSettingsController qsc) {
+        super(context, qsc);
 
         updateTile();
 
